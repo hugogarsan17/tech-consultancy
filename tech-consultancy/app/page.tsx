@@ -97,7 +97,7 @@ const testimonials = [
 
 const stats = [
   { label: "Proyectos entregados", value: "120+" },
-  { label: "Ahorro promedio de horas", value: "28%" },
+  { label: "Promedio de adopción de nuevos sistemas", value: "95%" },
   { label: "Disponibilidad SLA", value: "99.8%" },
 ];
 
@@ -105,12 +105,39 @@ const contactChannels = [
   {
     label: "Agenda una reunión",
     description: "Coordinamos un diagnóstico express de 45 minutos sin costo.",
-    action: "Calendario",
+    actionLabel: "Abrir calendario",
+    href: "https://cal.com/consultoriapymes/diagnostico",
   },
   {
     label: "Escríbenos",
     description: "Cuéntanos tus desafíos y te respondemos en menos de 24 horas hábiles.",
-    action: "contacto@consultoriapymes.tech",
+    actionLabel: "contacto@consultoriapymes.tech",
+    href: "mailto:contacto@consultoriapymes.tech",
+  },
+  {
+    label: "Descarga nuestro dossier",
+    description:
+      "Obtén un resumen de capacidades, casos de éxito y referencias comprobables para tu directorio.",
+    actionLabel: "Ver dossier",
+    href: "https://consultoriapymes.tech/dossier.pdf",
+  },
+];
+
+const faqs = [
+  {
+    question: "¿Trabajan con contratos a medida o paquetes cerrados?",
+    answer:
+      "Definimos un plan personalizado según tus objetivos y presupuesto. Podemos trabajar por proyecto, horas mensuales o squads dedicados.",
+  },
+  {
+    question: "¿Qué tan rápido podemos ver resultados?",
+    answer:
+      "El diagnóstico inicial se entrega en la primera semana y los primeros entregables funcionales se planifican para las semanas 3 y 4, con KPIs claros desde el día uno.",
+  },
+  {
+    question: "¿Cómo aseguran la transferencia de conocimiento?",
+    answer:
+      "Documentamos cada solución, realizamos workshops de adopción y dejamos embajadores internos para sostener los cambios tras el cierre del proyecto.",
   },
 ];
 
@@ -143,15 +170,14 @@ export default function Home() {
         <section id="inicio" className="grid gap-12 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
           <div>
             <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-4 py-1 text-sm font-semibold text-emerald-300">
-              Impulsamos tu crecimiento tecnológico
+              Consultoría tecnológica para pymes ambiciosas
             </span>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Diseñamos sistemas, automatizaciones y despliegues listos para escalar.
+              Estrategia, desarrollo y operaciones para escalar tu negocio con tecnología.
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate-300">
-              Acompañamos a pequeñas y medianas empresas a evolucionar su tecnología con una visión end-to-end: desde la
-              estrategia hasta el soporte continuo. Nuestro enfoque pragmático acelera la entrega de valor y elimina la fricción
-              operativa.
+              Diseñamos y ejecutamos soluciones informáticas que eliminan cuellos de botella, conectan tus sistemas y generan
+              crecimiento sostenido. Trabajamos con directivos de pymes para transformar la operación sin frenar el negocio.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
@@ -196,15 +222,15 @@ export default function Home() {
             <ul className="space-y-3 text-sm text-slate-200">
               <li className="flex items-start gap-3">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
-                <span>Workshops ejecutivos para alinear visión y roadmap.</span>
+                <span>Workshops ejecutivos para alinear visión, KPIs y roadmap.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
-                <span>Equipos multidisciplinarios que se integran con tu operación.</span>
+                <span>Squads senior que se integran con tu operación sin burocracia.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
-                <span>Indicadores de negocio y tecnología monitoreados en tiempo real.</span>
+                <span>Indicadores en tiempo real y tableros para dirección y operación.</span>
               </li>
             </ul>
           </div>
@@ -306,6 +332,48 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="grid gap-10 rounded-3xl border border-emerald-400/20 bg-gradient-to-br from-emerald-500/10 via-slate-900 to-slate-950 p-10 lg:grid-cols-[1.1fr,0.9fr]">
+          <div className="space-y-4">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-200">Diagnóstico ejecutivo</p>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">Un plan en 90 días con ROI medible</h2>
+            <p className="text-base text-slate-200">
+              Identificamos oportunidades de automatización, priorizamos iniciativas de alto impacto y definimos un tablero de
+              control para dirección. Todo en menos de tres semanas y con una hoja de ruta accionable de 90 días.
+            </p>
+            <ul className="space-y-3 text-sm text-slate-100">
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
+                <span>Benchmark tecnológico frente a empresas de tu sector.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
+                <span>Mapa de procesos críticos con riesgos y oportunidades priorizadas.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
+                <span>Roadmap con métricas, responsables y estimación de inversión.</span>
+              </li>
+            </ul>
+          </div>
+          <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-slate-950/80 p-8">
+            <div className="space-y-3">
+              <h3 className="text-xl font-semibold text-white">¿Qué incluye?</h3>
+              <p className="text-sm text-slate-300">
+                Sesiones remotas o presenciales, entrevistas con áreas clave y entrega ejecutiva con backlog priorizado. Ideal
+                para decidir próximas inversiones tecnológicas con certeza.
+              </p>
+            </div>
+            <a
+              href="https://cal.com/consultoriapymes/diagnostico"
+              className="mt-6 inline-flex items-center justify-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Reservar diagnóstico sin costo
+            </a>
+          </div>
+        </section>
+
         <section className="grid gap-8 rounded-3xl border border-white/10 bg-slate-900/50 p-10 lg:grid-cols-[1.1fr,0.9fr]">
           <div className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Testimonios</p>
@@ -325,6 +393,25 @@ export default function Home() {
             ))}
           </div>
         </section>
+
+        <section className="space-y-10 rounded-3xl border border-white/10 bg-slate-900/40 p-10">
+          <div className="space-y-3">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Preguntas frecuentes</p>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">Lo que los directores de pymes quieren saber</h2>
+            <p className="text-base text-slate-300">
+              Transparencia y claridad desde el primer contacto. Estas son algunas de las preguntas que respondemos en nuestras
+              reuniones iniciales.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {faqs.map((faq) => (
+              <article key={faq.question} className="rounded-2xl border border-white/10 bg-slate-900/70 p-6">
+                <h3 className="text-lg font-semibold text-white">{faq.question}</h3>
+                <p className="mt-2 text-sm text-slate-300">{faq.answer}</p>
+              </article>
+            ))}
+          </div>
+        </section>
       </main>
 
       <footer id="contacto" className="border-t border-white/10 bg-slate-950/80">
@@ -340,7 +427,15 @@ export default function Home() {
               <div key={channel.label} className="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
                 <h3 className="text-lg font-semibold text-white">{channel.label}</h3>
                 <p className="mt-2 text-sm text-slate-300">{channel.description}</p>
-                <p className="mt-4 text-sm font-semibold text-emerald-200">{channel.action}</p>
+                <a
+                  href={channel.href}
+                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-emerald-200 transition hover:text-emerald-100"
+                  target={channel.href.startsWith("http") ? "_blank" : undefined}
+                  rel={channel.href.startsWith("http") ? "noreferrer" : undefined}
+                >
+                  {channel.actionLabel}
+                  <span aria-hidden>→</span>
+                </a>
               </div>
             ))}
           </div>
