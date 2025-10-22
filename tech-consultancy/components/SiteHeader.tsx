@@ -15,7 +15,6 @@ export function SiteHeader() {
           <span className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-400">
             Consultoría Tech
           </span>
-          <p className="mt-1 text-xl font-bold text-white md:text-2xl">Soluciones digitales para pymes ambiciosas</p>
         </div>
         <nav className="flex flex-wrap items-center gap-4 text-sm font-semibold text-slate-200">
           {navigation.map((item) => (

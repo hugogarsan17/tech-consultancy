@@ -98,7 +98,7 @@ const finalCta = {
   title: "¿Listo para impulsar la transformación de tu pyme?",
   description: "Co-creemos una hoja de ruta tecnológica alineada con tus objetivos comerciales y operativos.",
   actions: [
-    { label: "Reservar diagnóstico", href: "/#contacto" },
+    { label: "Reservar diagnóstico", href: "/contacto" },
     { label: "Ver proyectos", href: "/#proyectos" },
   ],
 };

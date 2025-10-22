@@ -170,7 +170,7 @@ export default function Home() {
         <section id="inicio" className="grid gap-12 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
           <div>
             <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-4 py-1 text-sm font-semibold text-emerald-300">
-              Consultoría tecnológica para pymes ambiciosas
+              Consultoría tecnológica para pymes
             </span>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Estrategia, desarrollo y operaciones para escalar tu negocio con tecnología.
@@ -332,47 +332,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="grid gap-10 rounded-3xl border border-emerald-400/20 bg-gradient-to-br from-emerald-500/10 via-slate-900 to-slate-950 p-10 lg:grid-cols-[1.1fr,0.9fr]">
-          <div className="space-y-4">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-200">Diagnóstico ejecutivo</p>
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">Un plan en 90 días con ROI medible</h2>
-            <p className="text-base text-slate-200">
-              Identificamos oportunidades de automatización, priorizamos iniciativas de alto impacto y definimos un tablero de
-              control para dirección. Todo en menos de tres semanas y con una hoja de ruta accionable de 90 días.
-            </p>
-            <ul className="space-y-3 text-sm text-slate-100">
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
-                <span>Benchmark tecnológico frente a empresas de tu sector.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
-                <span>Mapa de procesos críticos con riesgos y oportunidades priorizadas.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
-                <span>Roadmap con métricas, responsables y estimación de inversión.</span>
-              </li>
-            </ul>
-          </div>
-          <div className="flex flex-col justify-between rounded-2xl border border-white/10 bg-slate-950/80 p-8">
-            <div className="space-y-3">
-              <h3 className="text-xl font-semibold text-white">¿Qué incluye?</h3>
-              <p className="text-sm text-slate-300">
-                Sesiones remotas o presenciales, entrevistas con áreas clave y entrega ejecutiva con backlog priorizado. Ideal
-                para decidir próximas inversiones tecnológicas con certeza.
-              </p>
-            </div>
-            <a
-              href="https://cal.com/consultoriapymes/diagnostico"
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Reservar diagnóstico sin costo
-            </a>
-          </div>
-        </section>
+    
 
         <section className="grid gap-8 rounded-3xl border border-white/10 bg-slate-900/50 p-10 lg:grid-cols-[1.1fr,0.9fr]">
           <div className="space-y-6">
@@ -413,40 +373,6 @@ export default function Home() {
           </div>
         </section>
       </main>
-
-      <footer id="contacto" className="border-t border-white/10 bg-slate-950/80">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-12 px-6 py-16 md:px-12 lg:px-16 lg:flex-row lg:items-start lg:justify-between">
-          <div className="max-w-md space-y-4">
-            <h2 className="text-3xl font-bold text-white">Comencemos tu próxima evolución tecnológica</h2>
-            <p className="text-sm text-slate-300">
-              Escríbenos con los retos de tu pyme y en 24 horas estaremos coordinando los próximos pasos para trabajar juntos.
-            </p>
-          </div>
-          <div className="grid flex-1 gap-6 sm:grid-cols-2">
-            {contactChannels.map((channel) => (
-              <div key={channel.label} className="rounded-2xl border border-white/10 bg-slate-900/60 p-6">
-                <h3 className="text-lg font-semibold text-white">{channel.label}</h3>
-                <p className="mt-2 text-sm text-slate-300">{channel.description}</p>
-                <a
-                  href={channel.href}
-                  className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-emerald-200 transition hover:text-emerald-100"
-                  target={channel.href.startsWith("http") ? "_blank" : undefined}
-                  rel={channel.href.startsWith("http") ? "noreferrer" : undefined}
-                >
-                  {channel.actionLabel}
-                  <span aria-hidden>→</span>
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="border-t border-white/5">
-          <div className="mx-auto flex w-full max-w-6xl flex-col gap-2 px-6 py-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between md:px-12 lg:px-16">
-            <p>© {currentYear} Consultoría Tech · Soluciones informáticas para pymes.</p>
-            <p className="text-slate-600">Hecho con enfoque humano y obsesión por la calidad.</p>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 }
