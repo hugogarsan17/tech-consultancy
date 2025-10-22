@@ -1,3 +1,7 @@
+import Link from "next/link";
+
+import { SiteHeader } from "@/components/SiteHeader";
+
 const services = [
   {
     title: "Sistemas a medida",
@@ -133,36 +137,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
-      <header className="border-b border-white/10 bg-slate-950/80 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-6 md:flex-row md:items-center md:justify-between md:px-12 lg:px-16">
-          <div>
-            <span className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-400">
-              Consultoría Tech
-            </span>
-            <p className="mt-1 text-xl font-bold text-white md:text-2xl">Soluciones digitales para pymes ambiciosas</p>
-          </div>
-          <nav className="flex flex-wrap items-center gap-4 text-sm font-semibold text-slate-200">
-            <a href="#inicio" className="transition hover:text-emerald-300">
-              Home
-            </a>
-            <a href="#quienes-somos" className="transition hover:text-emerald-300">
-              Quiénes somos
-            </a>
-            <a href="#proyectos" className="transition hover:text-emerald-300">
-              Proyectos
-            </a>
-            <a href="#contacto" className="transition hover:text-emerald-300">
-              Contacto
-            </a>
-            <a
-              href="#contacto"
-              className="rounded-full border border-emerald-400/60 px-5 py-2 text-emerald-200 transition hover:border-emerald-300 hover:text-emerald-100"
-            >
-              Hablemos hoy
-            </a>
-          </nav>
-        </div>
-      </header>
+      <SiteHeader />
 
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-24 px-6 pb-24 pt-16 md:px-12 lg:px-16">
         <section id="inicio" className="grid gap-12 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
@@ -178,13 +153,19 @@ export default function Home() {
               estrategia hasta el soporte continuo. Nuestro enfoque pragmático acelera la entrega de valor y elimina la fricción
               operativa.
             </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
                 href="#servicios"
                 className="flex items-center justify-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
               >
                 Ver servicios
               </a>
+              <Link
+                href="/quienes-somos"
+                className="flex items-center justify-center rounded-full border border-emerald-400/60 px-6 py-3 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300 hover:text-emerald-100"
+              >
+                Conoce al equipo
+              </Link>
               <a
                 href="#contacto"
                 className="flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:text-emerald-100"
