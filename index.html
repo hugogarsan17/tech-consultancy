@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantum Tech Consultancy</title>
+  <meta name="description" content="Consultoría de tecnología para potenciar la transformación digital de tu empresa." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="#inicio">Quantum Tech</a>
+      <nav class="main-nav" aria-label="Principal">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="menu-principal">
+          <span class="sr-only">Abrir menú</span>
+          <span class="nav-toggle__line"></span>
+          <span class="nav-toggle__line"></span>
+          <span class="nav-toggle__line"></span>
+        </button>
+        <ul id="menu-principal">
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#sectores">Sectores</a></li>
+          <li><a href="#proceso">Metodología</a></li>
+          <li><a href="#equipo">Equipo</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="#contacto">Hablemos</a>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="container">
+        <div class="hero__content">
+          <p class="hero__eyebrow">Consultoría tecnológica integral</p>
+          <h1>Transformamos tus sistemas para acelerar tu negocio</h1>
+          <p class="hero__description">
+            Acompañamos a organizaciones ambiciosas en el diseño, desarrollo e implementación de plataformas digitales modernas.
+            Desde la arquitectura de sistemas hasta la automatización DevOps, co-creamos soluciones que generan impacto real.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#servicios">Explorar servicios</a>
+            <a class="btn btn--ghost" href="#proyectos">Casos de éxito</a>
+          </div>
+        </div>
+        <div class="hero__card" role="presentation">
+          <h2>Resultados medibles</h2>
+          <ul>
+            <li>
+              <span class="hero__metric">+45%</span>
+              <span class="hero__metric-label">Eficiencia operativa lograda</span>
+            </li>
+            <li>
+              <span class="hero__metric">4.9/5</span>
+              <span class="hero__metric-label">Satisfacción promedio de clientes</span>
+            </li>
+            <li>
+              <span class="hero__metric">10+</span>
+              <span class="hero__metric-label">Países donde operamos</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios" class="section">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Qué hacemos</p>
+          <h2>Servicios enfocados en entregar valor</h2>
+          <p>Combinamos estrategia, ingeniería y operaciones para construir soluciones resilientes y escalables.</p>
+        </header>
+        <div class="grid grid--3">
+          <article class="card">
+            <h3>Arquitectura de sistemas</h3>
+            <p>Evaluamos tu ecosistema y diseñamos arquitecturas modulares basadas en microservicios, eventos y APIs.</p>
+            <ul>
+              <li>Auditoría de plataformas existentes</li>
+              <li>Blueprints cloud & on-premise</li>
+              <li>Roadmap de modernización</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Desarrollo de software</h3>
+            <p>Equipos ágiles que construyen productos digitales robustos con foco en la experiencia del usuario.</p>
+            <ul>
+              <li>Diseño UX/UI y prototipos</li>
+              <li>Aplicaciones web y móviles</li>
+              <li>Integraciones y APIs</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>DevOps & Cloud</h3>
+            <p>Implementamos pipelines CI/CD, observabilidad y automatización en AWS, Azure y Google Cloud.</p>
+            <ul>
+              <li>Infraestructura como código</li>
+              <li>Monitoreo y alertas inteligentes</li>
+              <li>Optimización de costos cloud</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Datos e IA</h3>
+            <p>Maximizamos el valor de tus datos con analítica avanzada, MLOps y modelos predictivos.</p>
+            <ul>
+              <li>Lagos de datos y ETL</li>
+              <li>Dashboards ejecutivos</li>
+              <li>Implementación de IA generativa</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Ciberseguridad</h3>
+            <p>Protegemos tus activos con estrategias zero-trust, pruebas de penetración y monitoreo 24/7.</p>
+            <ul>
+              <li>Gestión de vulnerabilidades</li>
+              <li>Red Team & Blue Team</li>
+              <li>Respuesta ante incidentes</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Oficina de proyectos</h3>
+            <p>Gobernanza tecnológica con PMOs ágiles, OKRs y métricas orientadas a resultados.</p>
+            <ul>
+              <li>Gestión integral de portafolio</li>
+              <li>Adopción de marcos ágiles</li>
+              <li>Coaching y capacitación</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proyectos" class="section section--alt">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Casos de éxito</p>
+          <h2>Historias que demuestran nuestro impacto</h2>
+          <p>Trabajamos con scale-ups y corporaciones líderes en diversas industrias.</p>
+        </header>
+        <div class="grid grid--2">
+          <article class="case">
+            <h3>Modernización fintech</h3>
+            <p>Replataforma completa basada en microservicios en AWS. Redujimos el time-to-market en 60% y habilitamos despliegues diarios.</p>
+            <dl>
+              <div>
+                <dt>Servicios</dt>
+                <dd>Arquitectura, DevOps, Observabilidad</dd>
+              </div>
+              <div>
+                <dt>Impacto</dt>
+                <dd>Disponibilidad 99.99%, latencia -35%</dd>
+              </div>
+            </dl>
+          </article>
+          <article class="case">
+            <h3>Plataforma de e-commerce B2B</h3>
+            <p>Implementamos una experiencia omnicanal con integración ERP y catálogo dinámico para más de 5.000 distribuidores.</p>
+            <dl>
+              <div>
+                <dt>Servicios</dt>
+                <dd>Producto, Desarrollo, Datos</dd>
+              </div>
+              <div>
+                <dt>Impacto</dt>
+                <dd>Incremento de ventas del 38% en 9 meses</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sectores" class="section">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Expertos en tu industria</p>
+          <h2>Entendemos los desafíos de sectores clave</h2>
+        </header>
+        <div class="grid grid--4">
+          <article class="pill">Finanzas & Seguros</article>
+          <article class="pill">Retail & eCommerce</article>
+          <article class="pill">Salud Digital</article>
+          <article class="pill">Telecomunicaciones</article>
+          <article class="pill">Energía & Utilities</article>
+          <article class="pill">Manufactura Inteligente</article>
+          <article class="pill">Sector Público</article>
+          <article class="pill">Startups & Scale-ups</article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--alt">
+      <div class="container testimonials">
+        <header class="section__header">
+          <p class="section__eyebrow">Testimonios</p>
+          <h2>Socios de confianza para tu evolución digital</h2>
+        </header>
+        <div class="testimonials__list">
+          <figure>
+            <blockquote>
+              “Quantum Tech nos acompañó desde la estrategia hasta la ejecución. Su enfoque pragmático nos permitió migrar sin interrupciones.”
+            </blockquote>
+            <figcaption>
+              <span class="author">Laura Rivas</span>
+              <span class="role">CIO, Integra Salud</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <blockquote>
+              “Su equipo de DevOps y datos transformó la forma en que lanzamos nuevas capacidades. Hoy operamos con total visibilidad.”
+            </blockquote>
+            <figcaption>
+              <span class="author">Carlos Méndez</span>
+              <span class="role">VP Tecnología, RedBank</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <blockquote>
+              “En menos de tres meses desplegaron una plataforma escalable para nuestros clientes industriales.”
+            </blockquote>
+            <figcaption>
+              <span class="author">María González</span>
+              <span class="role">CEO, Nova Industrial</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section id="proceso" class="section">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Metodología</p>
+          <h2>Colaboración transparente en cada etapa</h2>
+        </header>
+        <ol class="timeline">
+          <li>
+            <h3>Descubrimiento y diagnóstico</h3>
+            <p>Workshops con stakeholders, auditoría técnica y priorización del backlog.</p>
+          </li>
+          <li>
+            <h3>Diseño de solución</h3>
+            <p>Arquitecturas de referencia, definición de KPIs y diseño de la experiencia final.</p>
+          </li>
+          <li>
+            <h3>Implementación iterativa</h3>
+            <p>Equipos multidisciplinarios co-creando con entregas quincenales y demo reviews.</p>
+          </li>
+          <li>
+            <h3>Escalamiento y operación</h3>
+            <p>Optimización continua, automatización y soporte proactivo 24/7.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="equipo" class="section section--alt">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">Nuestro equipo</p>
+          <h2>Especialistas senior con visión de negocio</h2>
+          <p>Más de 80 consultores con experiencia en proyectos globales.</p>
+        </header>
+        <div class="grid grid--4 team">
+          <article>
+            <h3>Lucía Fernández</h3>
+            <p>Chief Technology Officer</p>
+            <p class="bio">Arquitecta cloud certificada, líder de iniciativas de modernización en banca y retail.</p>
+          </article>
+          <article>
+            <h3>Sebastián Ortega</h3>
+            <p>Head of Engineering</p>
+            <p class="bio">20 años diseñando productos digitales con foco en escalabilidad y diseño centrado en el usuario.</p>
+          </article>
+          <article>
+            <h3>Ana Castillo</h3>
+            <p>Lead Data Scientist</p>
+            <p class="bio">Especialista en IA generativa y MLOps, ex líder de analítica en scale-up fintech.</p>
+          </article>
+          <article>
+            <h3>Rafael Prieto</h3>
+            <p>Director DevOps</p>
+            <p class="bio">Implementa plataformas de entrega continua y observabilidad para clientes globales.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-final">
+      <div class="container">
+        <div>
+          <h2>¿Listo para construir el futuro de tu plataforma?</h2>
+          <p>Agendemos una reunión exploratoria para identificar oportunidades e impulsar tus objetivos.</p>
+        </div>
+        <a class="btn btn--primary" href="#contacto">Agenda una demo</a>
+      </div>
+    </section>
+
+    <section id="contacto" class="section section--alt">
+      <div class="container contacto">
+        <header class="section__header">
+          <p class="section__eyebrow">Contacto</p>
+          <h2>Cuéntanos tus retos tecnológicos</h2>
+        </header>
+        <form class="form" action="#" method="post">
+          <div class="form__field">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" name="nombre" required />
+          </div>
+          <div class="form__field">
+            <label for="empresa">Empresa</label>
+            <input type="text" id="empresa" name="empresa" />
+          </div>
+          <div class="form__field">
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" required />
+          </div>
+          <div class="form__field form__field--full">
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+          </div>
+          <div class="form__actions">
+            <button class="btn btn--primary" type="submit">Enviar</button>
+            <p class="form__disclaimer">Al enviar aceptas nuestra política de privacidad.</p>
+          </div>
+        </form>
+        <div class="contact-info">
+          <h3>Oficinas</h3>
+          <p>Buenos Aires · Madrid · Ciudad de México</p>
+          <h3>Escríbenos</h3>
+          <a href="mailto:hola@quantumtech.co">hola@quantumtech.co</a>
+          <h3>Síguenos</h3>
+          <ul class="social">
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">YouTube</a></li>
+            <li><a href="#">GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Quantum Tech Consultancy. Todos los derechos reservados.</p>
+      <nav aria-label="Legal">
+        <a href="#">Política de privacidad</a>
+        <a href="#">Términos de servicio</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
