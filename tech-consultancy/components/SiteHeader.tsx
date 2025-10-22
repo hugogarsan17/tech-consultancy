@@ -4,7 +4,7 @@ const navigation = [
   { label: "Home", href: "/#inicio" },
   { label: "Quiénes somos", href: "/quienes-somos" },
   { label: "Proyectos", href: "/#proyectos" },
-  { label: "Contacto", href: "/#contacto" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 export function SiteHeader() {
@@ -24,7 +24,7 @@ export function SiteHeader() {
             </Link>
           ))}
           <Link
-            href="/#contacto"
+            href="/contacto"
             className="rounded-full border border-emerald-400/60 px-5 py-2 text-emerald-200 transition hover:border-emerald-300 hover:text-emerald-100"
           >
             Hablemos hoy

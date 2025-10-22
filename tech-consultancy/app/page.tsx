@@ -192,12 +192,12 @@ export default function Home() {
               >
                 Conoce al equipo
               </Link>
-              <a
-                href="#contacto"
+              <Link
+                href="/contacto"
                 className="flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:text-emerald-100"
               >
                 Solicitar diagnóstico
-              </a>
+              </Link>
             </div>
             <div className="mt-10 grid gap-6 sm:grid-cols-3">
               {stats.map((stat) => (
