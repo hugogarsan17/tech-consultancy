@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { SiteHeader } from "@/components/SiteHeader";
@@ -146,16 +147,34 @@ const projects = [
     title: "Retail · Plataforma de e-commerce B2B",
     description:
       "Rediseñamos la arquitectura, conectamos con ERP y automatizamos el catálogo, aumentando un 45% las ventas repetidas.",
+    image: "/projects/retail-dashboard.svg",
+    github: "https://github.com/consultoriapymes/retail-b2b-platform",
+    results: [
+      { label: "Incremento en ventas recurrentes", value: "+45%" },
+      { label: "Tiempo de procesamiento de pedidos", value: "-32%" },
+    ],
   },
   {
     title: "Manufactura · Monitoreo IoT",
     description:
       "Implementamos dashboards de planta y alertas predictivas, reduciendo en 30% el tiempo de inactividad.",
+    image: "/projects/manufactura-iot.svg",
+    github: "https://github.com/consultoriapymes/iot-monitoring-suite",
+    results: [
+      { label: "Alarmas críticas detectadas anticipadamente", value: "87%" },
+      { label: "Down-time anual", value: "-30%" },
+    ],
   },
   {
     title: "Salud · Automatización de turnos",
     description:
       "Integramos sistemas de agenda, facturación y pacientes para lograr trazabilidad completa del servicio.",
+    image: "/projects/salud-turnos.svg",
+    github: "https://github.com/consultoriapymes/health-appointment-automation",
+    results: [
+      { label: "Pacientes autogestionando turnos", value: "+62%" },
+      { label: "Tasa de ausentismo", value: "-28%" },
+    ],
   },
 ];
 
@@ -315,18 +334,60 @@ export default function Home() {
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Proyectos</p>
-              <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Casos que demuestran nuestro impacto</h2>
+              <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">
+                Casos que demuestran nuestro impacto
+              </h2>
             </div>
             <p className="max-w-2xl text-base text-slate-300">
-              Cada iniciativa se acompaña de indicadores y aprendizajes que documentamos para escalar a otras áreas del
-              negocio.
+              Cada iniciativa se acompaña de indicadores, repositorios auditables y aprendizajes que documentamos para
+              escalar a otras áreas del negocio.
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
             {projects.map((project) => (
-              <article key={project.title} className="relative rounded-3xl border border-white/10 bg-slate-900/60 p-8">
-                <h3 className="text-lg font-semibold text-white">{project.title}</h3>
-                <p className="mt-3 text-sm text-slate-300">{project.description}</p>
+              <article
+                key={project.title}
+                className="group flex flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-900/60"
+              >
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition duration-500 group-hover:scale-105"
+                    sizes="(min-width: 1024px) 33vw, 100vw"
+                  />
+                </div>
+                <div className="flex flex-1 flex-col gap-4 p-8">
+                  <div className="space-y-2">
+                    <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+                    <p className="text-sm text-slate-300">{project.description}</p>
+                  </div>
+                  <dl className="grid gap-3 text-sm text-slate-200">
+                    {project.results.map((result) => (
+                      <div
+                        key={result.label}
+                        className="flex items-center justify-between rounded-xl border border-white/5 bg-white/5 px-4 py-2"
+                      >
+                        <dt className="text-xs font-medium uppercase tracking-[0.2em] text-slate-400">
+                          {result.label}
+                        </dt>
+                        <dd className="text-sm font-semibold text-emerald-200">{result.value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                  <div className="pt-2">
+                    <Link
+                      href={project.github}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-emerald-200 transition hover:text-emerald-100"
+                    >
+                      Ver repositorio en GitHub
+                      <span aria-hidden className="text-base">↗</span>
+                    </Link>
+                  </div>
+                </div>
               </article>
             ))}
           </div>
