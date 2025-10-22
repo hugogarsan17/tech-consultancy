@@ -110,30 +110,62 @@ const contactChannels = [
   },
 ];
 
+const projects = [
+  {
+    title: "Retail · Plataforma de e-commerce B2B",
+    description:
+      "Rediseñamos la arquitectura, conectamos con ERP y automatizamos el catálogo, aumentando un 45% las ventas repetidas.",
+  },
+  {
+    title: "Manufactura · Monitoreo IoT",
+    description:
+      "Implementamos dashboards de planta y alertas predictivas, reduciendo en 30% el tiempo de inactividad.",
+  },
+  {
+    title: "Salud · Automatización de turnos",
+    description:
+      "Integramos sistemas de agenda, facturación y pacientes para lograr trazabilidad completa del servicio.",
+  },
+];
+
 export default function Home() {
   const currentYear = new Date().getFullYear();
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <header className="border-b border-white/10 bg-slate-950/80 backdrop-blur">
-        <div className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-6 md:px-12 lg:px-16">
+        <div className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-6 py-6 md:flex-row md:items-center md:justify-between md:px-12 lg:px-16">
           <div>
             <span className="text-sm font-semibold uppercase tracking-[0.3em] text-slate-400">
               Consultoría Tech
             </span>
             <p className="mt-1 text-xl font-bold text-white md:text-2xl">Soluciones digitales para pymes ambiciosas</p>
           </div>
-          <a
-            href="#contacto"
-            className="hidden rounded-full border border-emerald-400/60 px-5 py-2 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300 hover:text-emerald-100 md:inline-flex"
-          >
-            Hablemos hoy
-          </a>
+          <nav className="flex flex-wrap items-center gap-4 text-sm font-semibold text-slate-200">
+            <a href="#inicio" className="transition hover:text-emerald-300">
+              Home
+            </a>
+            <a href="#quienes-somos" className="transition hover:text-emerald-300">
+              Quiénes somos
+            </a>
+            <a href="#proyectos" className="transition hover:text-emerald-300">
+              Proyectos
+            </a>
+            <a href="#contacto" className="transition hover:text-emerald-300">
+              Contacto
+            </a>
+            <a
+              href="#contacto"
+              className="rounded-full border border-emerald-400/60 px-5 py-2 text-emerald-200 transition hover:border-emerald-300 hover:text-emerald-100"
+            >
+              Hablemos hoy
+            </a>
+          </nav>
         </div>
       </header>
 
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-24 px-6 pb-24 pt-16 md:px-12 lg:px-16">
-        <section className="grid gap-12 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
+        <section id="inicio" className="grid gap-12 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
           <div>
             <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-4 py-1 text-sm font-semibold text-emerald-300">
               Impulsamos tu crecimiento tecnológico
@@ -175,28 +207,25 @@ export default function Home() {
           <div className="relative flex flex-col gap-6 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 p-10 shadow-[0_40px_120px_-60px_rgba(16,185,129,0.6)]">
             <div className="absolute inset-x-12 -top-20 h-40 rounded-full bg-emerald-500/20 blur-3xl" aria-hidden />
             <div className="absolute -bottom-10 -right-6 h-56 w-56 rounded-full bg-cyan-500/20 blur-3xl" aria-hidden />
-            <h2 className="text-2xl font-semibold text-white">Casos recientes</h2>
-            <div className="space-y-6">
-              <article className="relative rounded-2xl border border-white/10 bg-slate-900/70 p-6">
-                <h3 className="text-lg font-semibold text-white">Retail · Plataforma de e-commerce B2B</h3>
-                <p className="mt-2 text-sm text-slate-300">
-                  Rediseñamos la arquitectura, conectamos con ERP y automatizamos el catálogo, aumentando un 45% las ventas
-                  repetidas.
-                </p>
-              </article>
-              <article className="relative rounded-2xl border border-white/10 bg-slate-900/70 p-6">
-                <h3 className="text-lg font-semibold text-white">Manufactura · Monitoreo IoT</h3>
-                <p className="mt-2 text-sm text-slate-300">
-                  Implementamos dashboards de planta y alertas predictivas, reduciendo en 30% el tiempo de inactividad.
-                </p>
-              </article>
-              <article className="relative rounded-2xl border border-white/10 bg-slate-900/70 p-6">
-                <h3 className="text-lg font-semibold text-white">Salud · Automatización de turnos</h3>
-                <p className="mt-2 text-sm text-slate-300">
-                  Integramos sistemas de agenda, facturación y pacientes para lograr trazabilidad completa del servicio.
-                </p>
-              </article>
-            </div>
+            <h2 className="text-2xl font-semibold text-white">Tu socio tecnológico integral</h2>
+            <p className="text-sm text-slate-300">
+              Nos involucramos de punta a punta en tu transformación digital: diagnóstico estratégico, entrega iterativa y
+              soporte evolutivo para que cada inversión se traduzca en impacto real.
+            </p>
+            <ul className="space-y-3 text-sm text-slate-200">
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
+                <span>Workshops ejecutivos para alinear visión y roadmap.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
+                <span>Equipos multidisciplinarios que se integran con tu operación.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
+                <span>Indicadores de negocio y tecnología monitoreados en tiempo real.</span>
+              </li>
+            </ul>
           </div>
         </section>
 
@@ -231,13 +260,17 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="grid gap-12 rounded-3xl border border-white/10 bg-slate-900/40 p-10 lg:grid-cols-[0.9fr,1.1fr]">
+        <section
+          id="quienes-somos"
+          className="grid gap-12 rounded-3xl border border-white/10 bg-slate-900/40 p-10 lg:grid-cols-[0.9fr,1.1fr]"
+        >
           <div className="space-y-6">
-            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Por qué elegirnos</p>
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">Alineamos tecnología con objetivos de negocio</h2>
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Quiénes somos</p>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">Consultores que crecen junto a tu pyme</h2>
             <p className="text-base text-slate-300">
-              No somos solo implementadores. Somos socios estratégicos que acompañan tus decisiones tecnológicas, detectan
-              riesgos y construyen capacidades internas para que tu empresa sea más ágil y competitiva.
+              Somos un equipo senior de estrategas, diseñadores y especialistas en operaciones digitales que habla el idioma
+              de negocio. Nos enfocamos en resultados medibles, colaboración transparente y transferencia de conocimiento a tu
+              equipo interno.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3 md:gap-8">
@@ -266,6 +299,27 @@ export default function Home() {
                 <span className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">{step.step}</span>
                 <h3 className="mt-4 text-xl font-semibold text-white">{step.title}</h3>
                 <p className="mt-3 text-sm text-slate-300">{step.description}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="proyectos" className="space-y-12">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Proyectos</p>
+              <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Casos que demuestran nuestro impacto</h2>
+            </div>
+            <p className="max-w-2xl text-base text-slate-300">
+              Cada iniciativa se acompaña de indicadores y aprendizajes que documentamos para escalar a otras áreas del
+              negocio.
+            </p>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-3">
+            {projects.map((project) => (
+              <article key={project.title} className="relative rounded-3xl border border-white/10 bg-slate-900/60 p-8">
+                <h3 className="text-lg font-semibold text-white">{project.title}</h3>
+                <p className="mt-3 text-sm text-slate-300">{project.description}</p>
               </article>
             ))}
           </div>
