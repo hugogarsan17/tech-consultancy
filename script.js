@@ -23,3 +23,40 @@ if (navToggle && menu) {
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
+
+const faqItems = document.querySelectorAll('.faq__item');
+
+if (faqItems.length) {
+  const setExpandedState = (faqItem, expanded) => {
+    faqItem.setAttribute('aria-expanded', String(expanded));
+    const button = faqItem.querySelector('.faq__question');
+    if (button) {
+      button.setAttribute('aria-expanded', String(expanded));
+    }
+  };
+
+  faqItems.forEach((item) => {
+    const questionButton = item.querySelector('.faq__question');
+    if (!questionButton) {
+      return;
+    }
+
+    questionButton.addEventListener('click', () => {
+      const isExpanded = item.getAttribute('aria-expanded') === 'true';
+
+      faqItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          setExpandedState(otherItem, false);
+        }
+      });
+
+      setExpandedState(item, !isExpanded);
+    });
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      faqItems.forEach((item) => setExpandedState(item, false));
+    }
+  });
+}
