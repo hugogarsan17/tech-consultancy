@@ -10,11 +10,12 @@ import ReactMarkdown from "react-markdown";
  * 🔧 Config (en .env.local):
  *  NEXT_PUBLIC_GITHUB_OWNER=tu-usuario-o-org
  *  NEXT_PUBLIC_GITHUB_OWNER_TYPE=org   # o "user"
- *  # Opcional (para repos privados o más rate limit):
- *  # NEXT_PUBLIC_GITHUB_TOKEN=ghp_xxx
+ *  # ⚠️ Si usas NEXT_PUBLIC_GITHUB_TOKEN quedará expuesto en el cliente.
+ *  # Para repos privados, haz las llamadas desde el servidor /api.
  */
 const OWNER = (process.env.NEXT_PUBLIC_GITHUB_OWNER as string) || "vercel";
-const OWNER_TYPE = (process.env.NEXT_PUBLIC_GITHUB_OWNER_TYPE as "org" | "user") || "org";
+const OWNER_TYPE =
+  (process.env.NEXT_PUBLIC_GITHUB_OWNER_TYPE as "org" | "user") || "org";
 
 const FILTERS = {
   excludeArchived: true,
@@ -23,9 +24,14 @@ const FILTERS = {
 };
 
 // ---------- GitHub utils ----------
-const githubHeaders = () => {
+const githubHeaders = (): Headers => {
+  const h = new Headers({
+    Accept: "application/vnd.github+json",
+    "X-GitHub-Api-Version": "2022-11-28",
+  });
   const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
-  return token ? { Authorization: `Bearer ${token}` } : {};
+  if (token) h.set("Authorization", `Bearer ${token}`);
+  return h;
 };
 
 type RepoData = {
@@ -49,11 +55,20 @@ type MinimalProject = {
   tags?: string[];
 };
 
-async function fetchReposList(owner: string, type: "org" | "user"): Promise<RepoData[]> {
-  const base = type === "org" ? `https://api.github.com/orgs/${owner}` : `https://api.github.com/users/${owner}`;
+async function fetchReposList(
+  owner: string,
+  type: "org" | "user"
+): Promise<RepoData[]> {
+  const base =
+    type === "org"
+      ? `https://api.github.com/orgs/${owner}`
+      : `https://api.github.com/users/${owner}`;
   const url = `${base}/repos?per_page=100&sort=updated`;
   try {
-    const res = await fetch(url, { headers: { ...githubHeaders(), Accept: "application/vnd.github+json" }, cache: "no-store" });
+    const res = await fetch(url, {
+      headers: githubHeaders(),
+      cache: "no-store",
+    });
     if (!res.ok) return [];
     return (await res.json()) as RepoData[];
   } catch {
@@ -64,7 +79,7 @@ async function fetchReposList(owner: string, type: "org" | "user"): Promise<Repo
 async function fetchRepo(owner: string, repo: string) {
   try {
     const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
-      headers: { ...githubHeaders(), Accept: "application/vnd.github+json" },
+      headers: githubHeaders(),
       cache: "no-store",
     });
     if (!res.ok) return null;
@@ -76,15 +91,20 @@ async function fetchRepo(owner: string, repo: string) {
 
 async function fetchReadme(owner: string, repo: string): Promise<string | null> {
   try {
-    const res = await fetch(`https://api.github.com/repos/${owner}/${repo}/readme`, {
-      headers: { ...githubHeaders(), Accept: "application/vnd.github+json" },
-      cache: "no-store",
-    });
+    const res = await fetch(
+      `https://api.github.com/repos/${owner}/${repo}/readme`,
+      {
+        headers: githubHeaders(),
+        cache: "no-store",
+      }
+    );
     if (!res.ok) return null;
     const data = await res.json();
     if (!data?.content) return null;
     const markdown =
-      typeof window !== "undefined" ? atob(data.content) : Buffer.from(data.content, "base64").toString("utf-8");
+      typeof window !== "undefined"
+        ? atob(data.content)
+        : Buffer.from(data.content, "base64").toString("utf-8");
     return markdown;
   } catch {
     return null;
@@ -101,7 +121,11 @@ function prettyDate(iso: string | undefined): string {
   if (!iso) return "";
   try {
     const d = new Date(iso);
-    return new Intl.DateTimeFormat("es-ES", { year: "numeric", month: "short", day: "2-digit" }).format(d);
+    return new Intl.DateTimeFormat("es-ES", {
+      year: "numeric",
+      month: "short",
+      day: "2-digit",
+    }).format(d);
   } catch {
     return iso ?? "";
   }
@@ -116,7 +140,10 @@ function ProjectCard({ owner, repo, coverImage, demoUrl, tags }: MinimalProject)
   useEffect(() => {
     let mounted = true;
     (async () => {
-      const [r, md] = await Promise.all([fetchRepo(owner, repo), fetchReadme(owner, repo)]);
+      const [r, md] = await Promise.all([
+        fetchRepo(owner, repo),
+        fetchReadme(owner, repo),
+      ]);
       if (!mounted) return;
       setRepoData(r);
       setReadme(md);
@@ -142,13 +169,23 @@ function ProjectCard({ owner, repo, coverImage, demoUrl, tags }: MinimalProject)
       <div className="p-6">
         <div className="flex items-start justify-between gap-4">
           <div>
-            <h3 className="text-lg font-semibold text-white">{owner}/{repo}</h3>
-            <p className="mt-1 text-sm text-slate-300">{repoData?.description ?? ""}</p>
+            <h3 className="text-lg font-semibold text-white">
+              {owner}/{repo}
+            </h3>
+            <p className="mt-1 text-sm text-slate-300">
+              {repoData?.description ?? ""}
+            </p>
           </div>
           <div className="flex items-center gap-3 text-slate-300">
-            <span className="inline-flex items-center gap-1 text-sm"><Star className="h-4 w-4" />{repoData?.stargazers_count ?? "–"}</span>
+            <span className="inline-flex items-center gap-1 text-sm">
+              <Star className="h-4 w-4" />
+              {repoData?.stargazers_count ?? "–"}
+            </span>
             {repoData?.language && (
-              <span className="inline-flex items-center gap-1 text-sm"><Code className="h-4 w-4" />{repoData.language}</span>
+              <span className="inline-flex items-center gap-1 text-sm">
+                <Code className="h-4 w-4" />
+                {repoData.language}
+              </span>
             )}
           </div>
         </div>
@@ -156,13 +193,19 @@ function ProjectCard({ owner, repo, coverImage, demoUrl, tags }: MinimalProject)
         {tags && tags.length > 0 && (
           <div className="mt-3 flex flex-wrap gap-2">
             {tags.map((t) => (
-              <span key={t} className="inline-flex items-center rounded-md bg-slate-800/80 px-2 py-1 text-xs text-slate-200">{t}</span>
+              <span
+                key={t}
+                className="inline-flex items-center rounded-md bg-slate-800/80 px-2 py-1 text-xs text-slate-200"
+              >
+                {t}
+              </span>
             ))}
           </div>
         )}
 
         <div className="mt-4 inline-flex items-center gap-1 text-xs text-slate-400">
-          <Clock className="h-3.5 w-3.5" /> Última actualización: {prettyDate(repoData?.updated_at)}
+          <Clock className="h-3.5 w-3.5" /> Última actualización:{" "}
+          {prettyDate(repoData?.updated_at)}
         </div>
 
         {readme && (
@@ -238,7 +281,11 @@ function ProjectsGrid() {
   }
 
   if (items.length === 0) {
-    return <p className="text-slate-300">No se encontraron repos en {OWNER} ({OWNER_TYPE}).</p>;
+    return (
+      <p className="text-slate-300">
+        No se encontraron repos en {OWNER} ({OWNER_TYPE}).
+      </p>
+    );
   }
 
   return (
@@ -269,7 +316,8 @@ const sections = [
   {
     eyebrow: "Portafolio",
     title: "Muestras de proyectos",
-    description: "Explora un vistazo técnico y funcional. Si quieres ver casos privados, podemos agendar una revisión bajo NDA.",
+    description:
+      "Explora un vistazo técnico y funcional. Si quieres ver casos privados, podemos agendar una revisión bajo NDA.",
     body: <ProjectsGrid />,
   },
   {
@@ -288,7 +336,8 @@ const sections = [
 
 const finalCta = {
   title: "¿Quieres ver un caso similar al tuyo?",
-  description: "Preparamos una demo con métricas y arquitectura comparables a tu contexto.",
+  description:
+    "Preparamos una demo con métricas y arquitectura comparables a tu contexto.",
   actions: [
     { label: "Solicitar demo", href: "/contacto" },
     { label: "Hablar con un especialista", href: "/#contacto" },
@@ -296,5 +345,11 @@ const finalCta = {
 };
 
 export default function ProyectosPage() {
-  return <MarketingPageTemplate hero={hero} sections={sections} finalCta={finalCta} />;
+  return (
+    <MarketingPageTemplate
+      hero={hero}
+      sections={sections}
+      finalCta={finalCta}
+    />
+  );
 }
