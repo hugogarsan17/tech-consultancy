@@ -130,31 +130,47 @@ function prettyDate(iso: string | undefined): string {
     return iso ?? "";
   }
 }
+async function fetchOgCover(owner: string, repo: string): Promise<string | null> {
+  try {
+    const res = await fetch(`/api/github/og?owner=${owner}&repo=${repo}`, {
+      cache: "no-store",
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data.url ?? null;
+  } catch {
+    return null;
+  }
+}
 
 // ---------- ProjectCard sin Card/Button/Badge ----------
 function ProjectCard({ owner, repo, coverImage, demoUrl, tags }: MinimalProject) {
   const [repoData, setRepoData] = useState<RepoData | null>(null);
   const [readme, setReadme] = useState<string | null>(null);
   const [expanded, setExpanded] = useState(false);
+  const [ogCover, setOgCover] = useState<string | null>(null);
 
-  useEffect(() => {
-    let mounted = true;
-    (async () => {
-      const [r, md] = await Promise.all([
-        fetchRepo(owner, repo),
-        fetchReadme(owner, repo),
-      ]);
-      if (!mounted) return;
-      setRepoData(r);
-      setReadme(md);
-    })();
-    return () => {
-      mounted = false;
-    };
-  }, [owner, repo]);
+
+useEffect(() => {
+  let mounted = true;
+  (async () => {
+    const [r, md, og] = await Promise.all([
+      fetchRepo(owner, repo),
+      fetchReadme(owner, repo),
+      fetchOgCover(owner, repo),
+    ]);
+    if (!mounted) return;
+    setRepoData(r);
+    setReadme(md);
+    setOgCover(og);
+  })();
+  return () => {
+    mounted = false;
+  };
+}, [owner, repo]);
 
   const autoCover = useMemo(() => firstImageFromMarkdown(readme), [readme]);
-  const cover = coverImage || autoCover || "/placeholder.svg";
+const cover = coverImage || ogCover || firstImageFromMarkdown(readme) || "/placeholder.svg";
   const repoUrl = repoData?.html_url ?? `https://github.com/${owner}/${repo}`;
   const demo = demoUrl || repoData?.homepage || undefined;
 
