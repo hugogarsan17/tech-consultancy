@@ -309,30 +309,7 @@ export default function Home() {
               </article>
             ))}
           </div>
-        </section>
-
-        <section id="proyectos" className="space-y-12">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Proyectos</p>
-              <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Casos que demuestran nuestro impacto</h2>
-            </div>
-            <p className="max-w-2xl text-base text-slate-300">
-              Cada iniciativa se acompaña de indicadores y aprendizajes que documentamos para escalar a otras áreas del
-              negocio.
-            </p>
-          </div>
-          <div className="grid gap-6 lg:grid-cols-3">
-            {projects.map((project) => (
-              <article key={project.title} className="relative rounded-3xl border border-white/10 bg-slate-900/60 p-8">
-                <h3 className="text-lg font-semibold text-white">{project.title}</h3>
-                <p className="mt-3 text-sm text-slate-300">{project.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
-    
+        </section>    
 
         <section className="grid gap-8 rounded-3xl border border-white/10 bg-slate-900/50 p-10 lg:grid-cols-[1.1fr,0.9fr]">
           <div className="space-y-6">
