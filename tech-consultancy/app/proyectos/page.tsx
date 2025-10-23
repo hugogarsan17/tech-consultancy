@@ -224,21 +224,6 @@ const cover = coverImage || ogCover || firstImageFromMarkdown(readme) || "/place
           {prettyDate(repoData?.updated_at)}
         </div>
 
-        {readme && (
-          <div className="prose prose-invert mt-5 max-w-none">
-            <div className={!expanded ? "line-clamp-6" : undefined}>
-              <ReactMarkdown>{readme}</ReactMarkdown>
-            </div>
-            <button
-              type="button"
-              className="mt-2 inline-flex items-center p-0 text-sm text-emerald-300 hover:text-emerald-200"
-              onClick={() => setExpanded((e) => !e)}
-            >
-              {expanded ? "Ver menos" : "Ver más del README"}
-            </button>
-          </div>
-        )}
-
         <div className="mt-6 flex flex-wrap gap-3">
           <Link
             href={repoUrl}
