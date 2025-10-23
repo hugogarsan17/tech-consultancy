@@ -321,18 +321,6 @@ const sections = [
       "Explora un vistazo técnico y funcional. Si quieres ver casos privados, podemos agendar una revisión bajo NDA.",
     body: <ProjectsGrid />,
   },
-  {
-    eyebrow: "Cómo integramos GitHub",
-    title: "Del repo a una historia clara",
-    description:
-      "Extraemos el README para contexto, detectamos la primera imagen como portada y mostramos métricas clave. Puedes fijar una imagen manual si lo prefieres.",
-    bullets: [
-      "Se conecta automáticamente a una organización o usuario",
-      "Personaliza filtros (archivados, estrellas mínimas, homepage)",
-      "Mejora el rate limit con NEXT_PUBLIC_GITHUB_TOKEN",
-      "Se adapta a tu branding con Tailwind",
-    ],
-  },
 ];
 
 const finalCta = {
