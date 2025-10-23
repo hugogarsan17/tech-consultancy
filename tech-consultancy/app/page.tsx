@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { SiteHeader } from "@/components/SiteHeader";
+import { headers } from "next/headers";
 
 const services = [
   {
@@ -164,6 +165,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
+      <head>
+        <title>Tech-consultancy</title>
+      </head>
       <SiteHeader />
 
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-24 px-6 pb-24 pt-16 md:px-12 lg:px-16">
