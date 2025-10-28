@@ -184,12 +184,12 @@ export default function Home() {
               crecimiento sostenido. Trabajamos con directivos de pymes para transformar la operación sin frenar el negocio.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <a
-                href="#servicios"
+              <Link
+                href="/servicios"
                 className="flex items-center justify-center rounded-full bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 transition hover:bg-emerald-300"
               >
                 Ver servicios
-              </a>
+              </Link>
               <Link
                 href="/quienes-somos"
                 className="flex items-center justify-center rounded-full border border-emerald-400/60 px-6 py-3 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300 hover:text-emerald-100"
