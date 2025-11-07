@@ -4,158 +4,152 @@ import { SiteHeader } from "@/components/SiteHeader";
 
 const services = [
   {
-    title: "Sistemas a medida",
+    title: "MVPs y pruebas de concepto",
     description:
-      "Modernizamos y automatizamos tus plataformas clave para que puedan crecer junto con tu empresa.",
+      "Validamos rápido tus hipótesis con productos mínimos viables y prototipos navegables.",
     items: [
-      "Diagnóstico integral de sistemas heredados",
-      "Migraciones y refactorizaciones progresivas",
-      "Dashboards operativos en tiempo real",
+      "Prototipos en 1–2 semanas",
+      "MVP web/mobile con alcance acotado",
+      "Iteraciones guiadas por feedback",
     ],
   },
   {
-    title: "Desarrollo y automatización",
+    title: "Automatización ligera",
     description:
-      "Creamos herramientas web y flujos automatizados que reducen tareas manuales y errores humanos.",
+      "Eliminamos tareas manuales usando no-code/low-code e integraciones simples.",
     items: [
-      "Aplicaciones web y móviles",
-      "Integración con ERP, CRM y servicios en la nube",
-      "Bots y procesos automáticos con monitoreo",
+      "Zaps/Flows y micro-scripts",
+      "Integración con CRM/Sheets/Email",
+      "Dashboards básicos de operación",
     ],
   },
   {
-    title: "DevOps y despliegues",
+    title: "Infra y despliegue sin fricción",
     description:
-      "Diseñamos pipelines confiables para que cada entrega llegue a producción de forma segura y repetible.",
+      "Deja tu stack listo para crecer sin sobre-ingeniería ni costos innecesarios.",
     items: [
-      "Infraestructura como código",
-      "Observabilidad 24/7",
-      "Soporte y mantenimiento evolutivo",
+      "Pipelines simples CI/CD",
+      "Infra como plantilla (IaC light)",
+      "Monitoreo básico y soporte inicial",
     ],
   },
 ];
 
 const differentiators = [
   {
-    title: "Visión 360°",
+    title: "Founder-led",
     description:
-      "Unimos estrategia, tecnología y procesos para obtener resultados tangibles desde el primer mes.",
+      "Trabajo directo con los fundadores. Decisiones ágiles, menos burocracia y foco en resultados.",
   },
   {
-    title: "Equipo senior",
+    title: "Enfoque lean",
     description:
-      "Consultores con más de 10 años acompañando pymes en industria, retail, salud y servicios profesionales.",
+      "Entregas pequeñas y frecuentes. Construimos sólo lo necesario para aprender y avanzar.",
   },
   {
-    title: "Velocidad y cercanía",
+    title: "Accesible y transparente",
     description:
-      "Sprints quincenales, seguimiento ejecutivo y documentación clara para tu equipo interno.",
+      "Precios claros y por etapas. Comienza con un sprint pequeño y escala cuando tenga sentido.",
   },
 ];
 
 const roadmap = [
   {
     step: "01",
-    title: "Descubrimiento",
+    title: "Llamada de encaje (30’)",
     description:
-      "Analizamos tus procesos críticos, detectamos cuellos de botella y alineamos objetivos con la dirección.",
+      "Revisamos objetivos, contexto y definimos el éxito del primer experimento.",
   },
   {
     step: "02",
-    title: "Plan de acción",
+    title: "Sprint de descubrimiento (1–2 semanas)",
     description:
-      "Priorizamos iniciativas de alto impacto y definimos responsables, tiempos y métricas de éxito.",
+      "Mapeamos usuarios, flujos críticos y priorizamos un MVP/PoC alcanzable.",
   },
   {
     step: "03",
-    title: "Implementación",
+    title: "Construcción del MVP (2–6 semanas)",
     description:
-      "Desarrollamos soluciones, automatizamos y desplegamos con pruebas continuas y comunicación constante.",
+      "Desarrollamos la solución mínima, integramos lo esencial y medimos uso real.",
   },
   {
     step: "04",
-    title: "Acompañamiento",
+    title: "Aprendizaje y mejora",
     description:
-      "Entrenamos a tu equipo, monitoreamos resultados y ajustamos para garantizar la adopción y el ROI.",
+      "Recogemos feedback, iteramos y planeamos el siguiente hito según tracción.",
   },
 ];
 
 const testimonials = [
   {
-    name: "Carolina Méndez",
-    role: "Directora Operativa · Grupo Lumen",
+    name: "Programa Early Adopters",
+    role: "Primeros clientes",
     quote:
-      "En tres meses automatizamos el control de stock y logramos reducir en un 35% los tiempos de reposición.",
+      "Nos ayudaron a lanzar un prototipo funcional en semanas; ahora iteramos con datos reales.",
   },
   {
-    name: "Martín Rivas",
-    role: "CEO · Clínica Sanar",
+    name: "Fundadora de e-commerce nicho",
+    role: "Piloto",
     quote:
-      "Transformaron nuestra plataforma de turnos y hoy integramos historia clínica y facturación sin fricciones.",
+      "Automatizamos reportes y soporte. Ahorramos horas semanales y entendemos mejor la demanda.",
   },
-];
-
-const stats = [
-  { label: "Proyectos entregados", value: "120+" },
-  { label: "Promedio de adopción de nuevos sistemas", value: "95%" },
-  { label: "Disponibilidad SLA", value: "99.8%" },
 ];
 
 const contactChannels = [
   {
-    label: "Agenda una reunión",
-    description: "Coordinamos un diagnóstico express de 45 minutos sin costo.",
-    actionLabel: "Abrir calendario",
-    href: "https://cal.com/consultoriapymes/diagnostico",
-  },
-  {
-    label: "Escríbenos",
-    description: "Cuéntanos tus desafíos y te respondemos en menos de 24 horas hábiles.",
-    actionLabel: "contacto@consultoriapymes.tech",
-    href: "mailto:contacto@consultoriapymes.tech",
-  },
-  {
-    label: "Descarga nuestro dossier",
+    label: "Reserva una llamada",
     description:
-      "Obtén un resumen de capacidades, casos de éxito y referencias comprobables para tu directorio.",
-    actionLabel: "Ver dossier",
-    href: "https://consultoriapymes.tech/dossier.pdf",
+      "Agenda una intro de 30 minutos. Te respondemos en menos de 1 día hábil.",
+    actionLabel: "Calendario",
+    href: "/contacto", // o tu enlace de Calendly
+  },
+  {
+    label: "Únete al programa beta",
+    description:
+      "Accede a tarifas de lanzamiento y prioridad en roadmap a cambio de feedback periódico.",
+    actionLabel: "Quiero ser early adopter",
+    href: "/beta",
   },
 ];
 
 const faqs = [
   {
-    question: "¿Trabajan con contratos a medida o paquetes cerrados?",
+    question: "¿Cómo trabajan si están empezando?",
     answer:
-      "Definimos un plan personalizado según tus objetivos y presupuesto. Podemos trabajar por proyecto, horas mensuales o squads dedicados.",
+      "En etapas cortas y enfocadas. Iniciamos con un sprint de descubrimiento y un MVP acotado para validar rápido.",
   },
   {
-    question: "¿Qué tan rápido podemos ver resultados?",
+    question: "¿Qué modelos de colaboración ofrecen?",
     answer:
-      "El diagnóstico inicial se entrega en la primera semana y los primeros entregables funcionales se planifican para las semanas 3 y 4, con KPIs claros desde el día uno.",
+      "Por proyecto (MVP/PoC), bloques mensuales o una ‘mini-squad’ dedicada a tiempo parcial.",
   },
   {
-    question: "¿Cómo aseguran la transferencia de conocimiento?",
+    question: "¿Cuándo vemos resultados?",
     answer:
-      "Documentamos cada solución, realizamos workshops de adopción y dejamos embajadores internos para sostener los cambios tras el cierre del proyecto.",
+      "El plan de acción llega en la primera semana. El primer entregable funcional suele estar entre semanas 3 y 4.",
+  },
+  {
+    question: "¿Quién se queda con la propiedad intelectual?",
+    answer:
+      "Tu empresa. Entregamos código, documentación y acceso a repositorios/infra desde el día uno.",
   },
 ];
 
 const projects = [
   {
-    title: "Retail · Plataforma de e-commerce B2B",
+    title: "SaaS · MVP de onboarding",
     description:
-      "Rediseñamos la arquitectura, conectamos con ERP y automatizamos el catálogo, aumentando un 45% las ventas repetidas.",
+      "Prototipo clicable y flujo básico de registro/pagos para validar disposición a pagar.",
   },
   {
-    title: "Manufactura · Monitoreo IoT",
+    title: "Operaciones · Automatización ligera",
     description:
-      "Implementamos dashboards de planta y alertas predictivas, reduciendo en 30% el tiempo de inactividad.",
+      "Integración CRM + Sheets + Email para reducir tareas manuales en seguimiento comercial.",
   },
   {
-    title: "Salud · Automatización de turnos",
+    title: "Analytics · Dashboard inicial",
     description:
-      "Integramos sistemas de agenda, facturación y pacientes para lograr trazabilidad completa del servicio.",
+      "Métricas clave (activación, retención, tickets) con fuentes simples y trazabilidad básica.",
   },
 ];
 
@@ -170,14 +164,14 @@ export default function Home() {
         <section id="inicio" className="grid gap-12 lg:grid-cols-[1.1fr,0.9fr] lg:items-center">
           <div>
             <span className="inline-flex items-center rounded-full bg-emerald-500/10 px-4 py-1 text-sm font-semibold text-emerald-300">
-              Consultoría tecnológica para pymes
+              Startup de producto y servicios tech
             </span>
             <h1 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              Estrategia, desarrollo y operaciones para escalar tu negocio con tecnología.
+              Construimos MVPs y automatizaciones ligeras para validar y crecer sin humo.
             </h1>
             <p className="mt-6 text-lg leading-8 text-slate-300">
-              Diseñamos y ejecutamos soluciones informáticas que eliminan cuellos de botella, conectan tus sistemas y generan
-              crecimiento sostenido. Trabajamos con directivos de pymes para transformar la operación sin frenar el negocio.
+              Somos un equipo pequeño y fundador-liderado. Diseñamos, construimos e iteramos contigo para
+              aprender del usuario real y evitar sobre-ingeniería. Arranca pequeño, escala con evidencia.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <a
@@ -187,50 +181,39 @@ export default function Home() {
                 Ver servicios
               </a>
               <Link
-                href="/quienes-somos"
+                href="/beta"
                 className="flex items-center justify-center rounded-full border border-emerald-400/60 px-6 py-3 text-sm font-semibold text-emerald-200 transition hover:border-emerald-300 hover:text-emerald-100"
               >
-                Conoce al equipo
+                Programa beta
               </Link>
               <Link
                 href="/contacto"
                 className="flex items-center justify-center rounded-full border border-white/20 px-6 py-3 text-sm font-semibold text-white transition hover:border-white/40 hover:text-emerald-100"
               >
-                Solicitar diagnóstico
+                Reserva una llamada
               </Link>
-            </div>
-            <div className="mt-10 grid gap-6 sm:grid-cols-3">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="rounded-2xl border border-white/5 bg-white/5 p-6 text-center shadow-[0_20px_40px_-40px_rgba(45,212,191,0.4)]"
-                >
-                  <p className="text-3xl font-bold text-white">{stat.value}</p>
-                  <p className="mt-2 text-sm text-slate-300">{stat.label}</p>
-                </div>
-              ))}
             </div>
           </div>
           <div className="relative flex flex-col gap-6 overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-slate-900 via-slate-900 to-slate-800 p-10 shadow-[0_40px_120px_-60px_rgba(16,185,129,0.6)]">
             <div className="absolute inset-x-12 -top-20 h-40 rounded-full bg-emerald-500/20 blur-3xl" aria-hidden />
             <div className="absolute -bottom-10 -right-6 h-56 w-56 rounded-full bg-cyan-500/20 blur-3xl" aria-hidden />
-            <h2 className="text-2xl font-semibold text-white">Tu socio tecnológico integral</h2>
+            <h2 className="text-2xl font-semibold text-white">Empezamos simple, crecemos contigo</h2>
             <p className="text-sm text-slate-300">
-              Nos involucramos de punta a punta en tu transformación digital: diagnóstico estratégico, entrega iterativa y
-              soporte evolutivo para que cada inversión se traduzca en impacto real.
+              Nos enfocamos en validar rápido y aprender del mercado. Paquetes claros, documentación desde el día uno y
+              entregas frecuentes.
             </p>
             <ul className="space-y-3 text-sm text-slate-200">
               <li className="flex items-start gap-3">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
-                <span>Workshops ejecutivos para alinear visión, KPIs y roadmap.</span>
+                <span>Discovery express para definir el MVP realista.</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
-                <span>Squads senior que se integran con tu operación sin burocracia.</span>
+                <span>Stack moderno y pragmático (sin sobre-costos).</span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="mt-1 h-1.5 w-1.5 rounded-full bg-emerald-300" aria-hidden />
-                <span>Indicadores en tiempo real y tableros para dirección y operación.</span>
+                <span>Propiedad del código y traspaso de conocimiento.</span>
               </li>
             </ul>
           </div>
@@ -240,11 +223,10 @@ export default function Home() {
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Servicios</p>
-              <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Soluciones integrales para cada etapa</h2>
+              <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Lo esencial para empezar</h2>
             </div>
             <p className="max-w-2xl text-base text-slate-300">
-              Combinamos estrategia, ingeniería y operaciones para entregar soluciones que se adapten a tu contexto y se
-              mantengan en el tiempo.
+              Diseñados para validar, aprender y crecer con riesgos controlados. Construimos sólo lo que agrega valor hoy.
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
@@ -273,11 +255,10 @@ export default function Home() {
         >
           <div className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Quiénes somos</p>
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">Consultores que crecen junto a tu pyme</h2>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">Un equipo pequeño, cerca del problema</h2>
             <p className="text-base text-slate-300">
-              Somos un equipo senior de estrategas, diseñadores y especialistas en operaciones digitales que habla el idioma
-              de negocio. Nos enfocamos en resultados medibles, colaboración transparente y transferencia de conocimiento a tu
-              equipo interno.
+              Somos desarrolladores y estrategas de producto en etapa temprana. Trabajamos codo a codo con fundadores y
+              equipos chicos para lanzar rápido, medir y aprender. Sin promesas vacías: transparencia y foco.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-3 md:gap-8">
@@ -294,10 +275,10 @@ export default function Home() {
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Metodología</p>
-              <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Implementación con foco en resultados</h2>
+              <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Construir, medir, aprender</h2>
             </div>
             <p className="max-w-2xl text-base text-slate-300">
-              A través de un roadmap claro y transparente nos aseguramos de entregar avances frecuentes y medibles.
+              Roadmap claro, entregas cortas y métricas que importan. Cada hito desbloquea el siguiente.
             </p>
           </div>
           <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
@@ -314,12 +295,11 @@ export default function Home() {
         <section id="proyectos" className="space-y-12">
           <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Proyectos</p>
-              <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Casos que demuestran nuestro impacto</h2>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Pilotos</p>
+              <h2 className="mt-2 text-3xl font-bold text-white sm:text-4xl">Validaciones recientes</h2>
             </div>
             <p className="max-w-2xl text-base text-slate-300">
-              Cada iniciativa se acompaña de indicadores y aprendizajes que documentamos para escalar a otras áreas del
-              negocio.
+              Casos pequeños, impacto tangible. Priorizamos aprender rápido y reducir riesgo antes de escalar.
             </p>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
@@ -332,14 +312,12 @@ export default function Home() {
           </div>
         </section>
 
-    
-
         <section className="grid gap-8 rounded-3xl border border-white/10 bg-slate-900/50 p-10 lg:grid-cols-[1.1fr,0.9fr]">
           <div className="space-y-6">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Testimonios</p>
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">Historias de impacto</h2>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">Primeras voces</h2>
             <p className="text-base text-slate-300">
-              Nuestros clientes confían en nosotros para resolver desafíos complejos y construir capacidades que perduren.
+              Estamos construyendo con nuestros primeros clientes. Esto es lo que destacan del proceso.
             </p>
           </div>
           <div className="space-y-6">
@@ -357,10 +335,9 @@ export default function Home() {
         <section className="space-y-10 rounded-3xl border border-white/10 bg-slate-900/40 p-10">
           <div className="space-y-3">
             <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Preguntas frecuentes</p>
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">Lo que los directores de pymes quieren saber</h2>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">Lo que solemos aclarar</h2>
             <p className="text-base text-slate-300">
-              Transparencia y claridad desde el primer contacto. Estas son algunas de las preguntas que respondemos en nuestras
-              reuniones iniciales.
+              Respuestas breves y directas para tomar una decisión informada y empezar.
             </p>
           </div>
           <div className="space-y-4">
@@ -369,6 +346,29 @@ export default function Home() {
                 <h3 className="text-lg font-semibold text-white">{faq.question}</h3>
                 <p className="mt-2 text-sm text-slate-300">{faq.answer}</p>
               </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="contacto" className="space-y-8 rounded-3xl border border-white/10 bg-slate-900/40 p-10">
+          <div className="space-y-3">
+            <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-300">Contacto</p>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">Hablemos de tu primer hito</h2>
+            <p className="text-base text-slate-300">
+              Cupos limitados para el programa beta. Si encaja, empezamos con un sprint de descubrimiento.
+            </p>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2">
+            {contactChannels.map((c) => (
+              <a
+                key={c.label}
+                href={c.href}
+                className="rounded-2xl border border-white/10 bg-slate-900/70 p-6 transition hover:border-white/20"
+              >
+                <p className="text-sm font-semibold text-emerald-200">{c.label}</p>
+                <p className="mt-1 text-sm text-slate-300">{c.description}</p>
+                <p className="mt-3 text-sm font-medium text-white">{c.actionLabel}</p>
+              </a>
             ))}
           </div>
         </section>
